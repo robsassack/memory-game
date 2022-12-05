@@ -3,6 +3,16 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  user-select: none;
+}
+
+body {
+  background-color: #CEDFF2;
+  color: #34383D;
+}
+
+h1 {
+  padding: 10px;
 }
 
 .App--header {
@@ -10,6 +20,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background-color: #85B9F0;
 }
 
 .App--stats {
@@ -17,19 +28,32 @@
   flex-wrap: wrap;
   justify-content: center;
   column-gap: 30px;
+  row-gap: 10px;
   padding: 10px;
+  margin-bottom: 10px;
+}
+
+.App--stats h2 {
+  padding: 5px 25px;
+  border-radius: 10px;
+  color: white;
+  background-color: #3E5670;
 }
 
 .App--cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  justify-content: center;
+  gap: 10px;
+  margin: 40px;
 }
 
 .card {
   border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
   text-align: center;
-  padding: 5px;
+  padding: 10px;
 }
 
 .card img {

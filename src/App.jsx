@@ -14,22 +14,27 @@ function App() {
     randomOrder();
   }, []);
 
+  // shuffles order of cards
   function randomOrder() {
     cards.sort(() => Math.random() - 0.5);
   }
 
+  // reset game: clear selected cards, reset score, shuffle cards
   function resetGame() {
     setSelected([]);
     setScore(0);
     randomOrder();
   }
 
+  // logic for handling card clicks
   function clickCard(id) {
+    // reset game if card has already been selected
     if (selected.includes(id)) {
       resetGame();
+    // add to score and continue game if card has not been selected
     } else {
       setSelected((prevState) => [...prevState, id]);
-      setScore((prevState) => (prevState + 1));
+      setScore((prevState) => prevState + 1);
       if (score >= highScore) {
         setHighScore(score + 1);
       }
@@ -45,6 +50,7 @@ function App() {
     <div className='App'>
       <div className='App--header'>
         <h1>Programming Memory Game</h1>
+        <h3>Click on a different card every time to score!</h3>
         <div className='App--stats'>
           <h2>Score: {score}</h2>
           <h2>High Score: {highScore}</h2>
