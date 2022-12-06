@@ -60,3 +60,36 @@ h1 {
   height: 100px;
   width: 100px;
 }
+
+.App--winner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.App--winner h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.App--winner button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #85B9F0;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.App--winner button:hover {
+  background-color: #76a4d4;
+}
+
+.App--winner button:active {
+  background-color: #597fa7;
+  transform: scale(0.95);
+}

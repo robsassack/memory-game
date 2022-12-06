@@ -8,6 +8,7 @@ function App() {
   const [selected, setSelected] = useState([]);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
+  const [winner, setWinner] = useState(false);
 
   // at start of render, shuffle cards
   useEffect(() => {
@@ -19,11 +20,12 @@ function App() {
     cards.sort(() => Math.random() - 0.5);
   }
 
-  // reset game: clear selected cards, reset score, shuffle cards
+  // reset game: clear selected cards, reset score, shuffle cards, set winner state to false
   function resetGame() {
     setSelected([]);
     setScore(0);
     randomOrder();
+    setWinner(false);
   }
 
   // logic for handling card clicks
@@ -38,7 +40,11 @@ function App() {
       if (score >= highScore) {
         setHighScore(score + 1);
       }
-      randomOrder();
+      if (score === 11) {
+        setWinner(true);
+      } else {
+        randomOrder();
+      }
     }
   }
 
@@ -56,7 +62,16 @@ function App() {
           <h2>High Score: {highScore}</h2>
         </div>
       </div>
-      <div className='App--cards'>{cardList}</div>
+      {
+        !winner ? (
+          <div className='App--cards'>{cardList}</div>
+        ) : (
+          <div className='App--winner'>
+            <h1>You win!</h1>
+            <button onClick={resetGame}>Play again?</button>
+          </div>
+        )
+      }
     </div>
   );
 }
