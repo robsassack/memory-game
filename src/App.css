@@ -15,12 +15,19 @@ h1 {
   padding: 10px;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .App--header {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   background-color: #85B9F0;
+  width: 100%;
 }
 
 .App--stats {
@@ -46,6 +53,7 @@ h1 {
   justify-content: center;
   gap: 10px;
   margin: 40px;
+  max-width: 800px;
 }
 
 .card {
