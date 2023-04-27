@@ -19,6 +19,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
 }
 
 .App--header {
@@ -45,6 +46,10 @@ h1 {
   border-radius: 10px;
   color: white;
   background-color: #3E5670;
+}
+
+.App--main {
+  flex: 1;
 }
 
 .App--cards {
@@ -110,4 +115,15 @@ h1 {
 .App--winner button:active {
   background-color: #597fa7;
   transform: scale(0.95);
+}
+
+.App--github-link {
+  color: #3E5670;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  margin-top: auto;
+}
+
+.App--github-link:hover {
+  color: #597fa7;
 }

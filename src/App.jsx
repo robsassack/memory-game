@@ -33,7 +33,7 @@ function App() {
     // reset game if card has already been selected
     if (selected.includes(id)) {
       resetGame();
-    // add to score and continue game if card has not been selected
+      // add to score and continue game if card has not been selected
     } else {
       setSelected((prevState) => [...prevState, id]);
       setScore((prevState) => prevState + 1);
@@ -62,16 +62,19 @@ function App() {
           <h2>High Score: {highScore}</h2>
         </div>
       </div>
-      {
-        !winner ? (
+      <div className='App--main'>
+        {!winner ? (
           <div className='App--cards'>{cardList}</div>
         ) : (
           <div className='App--winner'>
             <h1>You win!</h1>
             <button onClick={resetGame}>Play again?</button>
           </div>
-        )
-      }
+        )}
+      </div>
+      <a href='https://github.com/robsassack/memory-game'>
+        <i class='fa-brands fa-github App--github-link'></i>
+      </a>
     </div>
   );
 }
